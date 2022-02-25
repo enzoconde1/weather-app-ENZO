@@ -1,3 +1,0 @@
-
-test("CityInfo render", async () => {
-})
