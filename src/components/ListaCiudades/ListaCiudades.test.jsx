@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import ListaCiudades from './ListaCiudades'; //SUT
+import ListaCiudades from './ListaCiudades';
 
 const ciudades = [
     { ciudad: 'Buenos Aires', pais: 'Argentina'},

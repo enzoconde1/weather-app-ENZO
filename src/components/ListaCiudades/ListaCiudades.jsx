@@ -1,8 +1,8 @@
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import React from 'react';
-import CiudadInfo from '../CiudadInfo';
-import Clima from '../Clima';
+import CiudadInfo from '../CiudadInfo/CiudadInfo';
+import Clima from '../Clima/Clima';
 
 const renderCiudadPais = eventoCiudadPais => ciudadPais => {
   const { ciudad, pais } = ciudadPais
@@ -38,7 +38,7 @@ const ListaCiudades = ({ ciudades, onClickCiudad }) => {
   )
 };
 
-CiudadInfo.propTypes = {
+ListaCiudades.propTypes = {
   ciudades: PropTypes.array.isRequired,
   onClickCiudad: PropTypes.func.isRequired
 };

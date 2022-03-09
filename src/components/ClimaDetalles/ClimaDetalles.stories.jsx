@@ -1,7 +1,6 @@
 import React from 'react'
 import ClimaDetalles from './ClimaDetalles'
 
-
 export default {
     title: "ClimaDetalles",
     component: ClimaDetalles

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import CiudadInfo from './CiudadInfo'; //SUT
+import CiudadInfo from './CiudadInfo';
 
 test("CiudadInfo render", async () => {
     const ciudad = "Buenos Aires"
