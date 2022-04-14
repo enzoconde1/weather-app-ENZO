@@ -10,8 +10,6 @@ import WelcomePage from "./pages/WelcomePage";
 
 const App = () => {
     return (
-    <div>
-        <h1>App</h1>
         <Router>
             <Switch>
                 <Route exact path="/">
@@ -24,11 +22,10 @@ const App = () => {
                     <CiudadPage/>
                 </Route>
                 <Route>
-                   <NotFoundPage/>
+                <NotFoundPage/>
                 </Route>
             </Switch>
         </Router>
-    </div>
     );
 };
 

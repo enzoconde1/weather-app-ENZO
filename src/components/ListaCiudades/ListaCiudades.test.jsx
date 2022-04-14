@@ -14,7 +14,7 @@ test("ListaCiudades render", async () => {
     
     const { findAllByRole } = render(<ListaCiudades ciudades={ciudades} />)
 
-    const items = await findAllByRole("listitem")
+    const items = await findAllByRole("button")
 
     expect(items).toHaveLength(5)
 })
@@ -25,7 +25,7 @@ test("Clima click", async () => {
 
     const { findAllByRole } = render(<ListaCiudades ciudades={ciudades} onClickCiudad={fnClickOnItem} />)
 
-    const items = await findAllByRole('listitem')
+    const items = await findAllByRole('button')
 
     fireEvent.click(items[0])
 

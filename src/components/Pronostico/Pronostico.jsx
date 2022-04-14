@@ -23,7 +23,7 @@ const renderPronosticoItem = pronostico => {
 
 const Pronostico = ({ listaItemsPronostico }) => {
   return (
-    <Grid container justify='center' alignItems='center' >
+    <Grid container justify='space-around' alignItems='center' >
         { listaItemsPronostico.map(pronostico => renderPronosticoItem(pronostico)) }
     </Grid>
   )
