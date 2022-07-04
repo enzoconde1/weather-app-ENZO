@@ -42,7 +42,7 @@ const ListaCiudades = ({ ciudades, onClickCiudad }) => {
   useEffect(() => {
     const setWeather = async (ciudad, codigoPais) => {
       try {
-        const appId = 'b1437c5f6e8ebc408928374ff8a65cc0';
+        const appId = '';
         const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},,${codigoPais}&appid=${appId}`;
 
         const responseGeo = await axios.get(geoUrl);
