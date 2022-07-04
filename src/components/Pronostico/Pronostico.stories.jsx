@@ -1,20 +1,20 @@
-import React from 'react'
-import Pronostico from './Pronostico'
+import React from 'react';
+import Pronostico from './Pronostico';
 
 export default {
-    title: "Pronostico",
-    component: Pronostico
-}
+  title: 'Pronostico',
+  component: Pronostico,
+};
 
-const listaItemsPronostico = [ 
-    { hora: 18, estado: "soleado", temperatura: 17, dia: "Jueves" },
-    { hora: 6, estado: "nube", temperatura: 18, dia: "Viernes" },
-    { hora: 12, estado: "niebla", temperatura: 18, dia: "Viernes" },
-    { hora: 18, estado: "nublado", temperatura: 19, dia: "Viernes" },
-    { hora: 14, estado: "lluvia", temperatura: 17, dia: "Sábado" },
-    { hora: 15, estado: "lluvia", temperatura: 17, dia: "Sábado" }
-]    
+const listaItemsPronostico = [
+  { hora: 18, estado: 'clear', temperatura: 17, dia: 'Jueves' },
+  { hora: 6, estado: 'clouds', temperatura: 18, dia: 'Viernes' },
+  { hora: 12, estado: 'drizzle', temperatura: 18, dia: 'Viernes' },
+  { hora: 18, estado: 'clouds', temperatura: 19, dia: 'Viernes' },
+  { hora: 14, estado: 'rain', temperatura: 17, dia: 'Sábado' },
+  { hora: 15, estado: 'rain', temperatura: 17, dia: 'Sábado' },
+];
 
 export const PronosticoExp = () => (
-    <Pronostico listaItemsPronostico={listaItemsPronostico} />
-)
+  <Pronostico listaItemsPronostico={listaItemsPronostico} />
+);

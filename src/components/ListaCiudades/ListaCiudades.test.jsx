@@ -3,31 +3,33 @@ import React from 'react';
 import ListaCiudades from './ListaCiudades';
 
 const ciudades = [
-    { ciudad: 'Buenos Aires', pais: 'Argentina'},
-    { ciudad: 'Rio de Janeiro', pais: 'Brasil'},
-    { ciudad: 'Madrid', pais: 'España'},
-    { ciudad: 'Miami', pais: 'Estados Unidos'},
-    { ciudad: 'Lisboa', pais: 'Portugal'}
-]
+  { ciudad: 'Buenos Aires', pais: 'Argentina' },
+  { ciudad: 'Rio de Janeiro', pais: 'Brasil' },
+  { ciudad: 'Madrid', pais: 'España' },
+  { ciudad: 'Miami', pais: 'Estados Unidos' },
+  { ciudad: 'Lisboa', pais: 'Portugal' },
+];
 
-test("ListaCiudades render", async () => {
-    
-    const { findAllByRole } = render(<ListaCiudades ciudades={ciudades} />)
+test('ListaCiudades render', async () => {
+  const { findAllByRole } = render(
+    <ListaCiudades ciudades={ciudades} onClickCiudad={() => {}} />
+  );
 
-    const items = await findAllByRole("button")
+  const items = await findAllByRole('button');
 
-    expect(items).toHaveLength(5)
-})
+  expect(items).toHaveLength(5);
+});
 
-test("Clima click", async () => {
+test('Clima click', async () => {
+  const fnClickOnItem = jest.fn();
 
-    const fnClickOnItem = jest.fn()
+  const { findAllByRole } = render(
+    <ListaCiudades ciudades={ciudades} onClickCiudad={fnClickOnItem} />
+  );
 
-    const { findAllByRole } = render(<ListaCiudades ciudades={ciudades} onClickCiudad={fnClickOnItem} />)
+  const items = await findAllByRole('button');
 
-    const items = await findAllByRole('button')
+  fireEvent.click(items[0]);
 
-    fireEvent.click(items[0])
-
-    expect(fnClickOnItem).toHaveBeenCalledTimes(1)
-})
+  expect(fnClickOnItem).toHaveBeenCalledTimes(1);
+});

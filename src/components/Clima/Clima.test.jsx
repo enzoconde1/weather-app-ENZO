@@ -3,12 +3,10 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import Clima from './Clima'; //SUT
 
-test("Clima render", async () => {
+test('Clima render', async () => {
+  const { findByRole } = render(<Clima temperatura={35} estado="clear" />);
 
-    const { findByRole } = render(<Clima temperatura={35} estado='soleado' />)
+  const temperaturaCmp = await findByRole('heading');
 
-    const temperaturaCmp = await findByRole("heading")
-
-    expect(temperaturaCmp).toHaveTextContent('35')
-})
-
+  expect(temperaturaCmp).toHaveTextContent('35');
+});

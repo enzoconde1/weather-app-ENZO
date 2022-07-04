@@ -5,31 +5,26 @@ import AppFrame from '../components/AppFrame/AppFrame';
 import ListaCiudades from './../components/ListaCiudades';
 
 const ciudades = [
-    { ciudad: 'Buenos Aires', pais: 'Argentina'},
-    { ciudad: 'Rio de Janeiro', pais: 'Brasil'},
-    { ciudad: 'Madrid', pais: 'España'},
-    { ciudad: 'Miami', pais: 'Estados Unidos'},
-    { ciudad: 'Lisboa', pais: 'Portugal'}
-]
+  { ciudad: 'Buenos Aires', pais: 'Argentina', codigoPais: 'AR' },
+  { ciudad: 'Rio de Janeiro', pais: 'Brasil', codigoPais: 'BR' },
+  { ciudad: 'Madrid', pais: 'España', codigoPais: 'MX' },
+  { ciudad: 'Miami', pais: 'Estados Unidos', codigoPais: 'US' },
+];
 
 const MainPage = () => {
+  const history = useHistory();
 
-    const history = useHistory()
+  const handleOnClick = () => {
+    history.push('/city');
+  };
 
-    const handleOnClick = () => {
-        history.push('/city')
-    }
+  return (
+    <AppFrame>
+      <Paper elevation={3}>
+        <ListaCiudades ciudades={ciudades} onClickCiudad={handleOnClick} />
+      </Paper>
+    </AppFrame>
+  );
+};
 
-    return (
-        <AppFrame>
-            <Paper elevation={3}>
-                <ListaCiudades 
-                    ciudades={ciudades}
-                    onClickCiudad={handleOnClick} 
-                />
-            </Paper>
-        </AppFrame>
-    )
-}
-
-export default MainPage
+export default MainPage;
